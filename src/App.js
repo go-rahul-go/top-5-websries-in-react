@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Amazon from "./Amazon";
+import "./style.css"
+import Netflix from "./Netflix";
+import Heading from "./Heading";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+
+function App(props) {
+    if(props.type==="amazon")
+    {
+        return(
+            <>
+            <Heading type="amazon"/>
+            <div className="container">
+            <Amazon/>
+            </div>
+            </>
+        )
+    }
+    else{
+        return(
+            <>
+            <Heading type="netflix"/>
+            <div className="container">
+            <Netflix/>
+            </div>
+            </>
+        )
+    }
+    
+
 }
 
 export default App;
+
